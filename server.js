@@ -3,7 +3,7 @@ var emitter = new EventEmitter;
 
 var express = require('express');
 var app = express.createServer();
-var stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+var stripe = require('stripe')('sk_test_hdlVl9aQW9w96GdbIh8JenMw');
 
 app.use(express.static(__dirname));
 app.use(express.bodyParser())
@@ -46,8 +46,8 @@ function chargeServer(client, con) {
     });
 }
 
-console.log("Starting on port: "+process.env.PORT)
-app.listen(process.env.PORT || 8080);
+console.log("Starting on port: 8080")
+app.listen(8080);
 
 // then just pass the server app handle to .listen()!
 

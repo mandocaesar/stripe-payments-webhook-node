@@ -19,8 +19,8 @@ app.post('/test-payment', function(request, response){
 			exp_year: '2018'
 		}
 	}, function(err, charge){
-		console.log(err);
-		response.send(JSON.stringify(charge));
+		console.log(charge);
+		response.send(200);
 	})
 });
 
